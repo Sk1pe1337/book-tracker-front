@@ -1,300 +1,116 @@
-/* Общий стиль для всего приложения */
-.App {
-  text-align: center;
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
-  min-height: 100vh;
+/* 🔹 Общие стили */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f8f9fa;
+  margin: 0;
+  padding: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
+  min-height: 100vh;
+}
+
+/* 🔹 Основной контейнер */
+.main-container {
+  width: 100%;
+  max-width: 900px;
+  margin-top: 70px;
+  padding: 20px;
 }
 
 /* 🔹 Навигация */
 nav {
-  background-color: #282c34;
-  padding: 15px;
+  background-color: #2c3e50;
+  padding: 12px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
   position: fixed;
   top: 0;
-  z-index: 100;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-nav a {
+.nav-links {
+  display: flex;
+  gap: 12px;
+}
+
+.nav-item {
   color: white;
   text-decoration: none;
-  font-size: 18px;
-  padding: 10px 15px;
+  font-size: 14px;
+  padding: 8px 12px;
   border-radius: 5px;
-  transition: background-color 0.3s ease-in-out;
+  transition: background 0.3s, transform 0.2s;
 }
 
-nav a:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-}
-
-nav .button-group {
-  display: flex;
-  gap: 10px;
-}
-
-/* 🔹 Кнопки */
-nav button,
-nav a {
-  font-size: 16px;
-  font-weight: bold;
-}
-
-nav button {
-  padding: 10px 15px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease-in-out;
-}
-
-.logout-button {
-  background-color: #ff4b4b;
-  color: white;
-}
-
-.logout-button:hover {
-  background-color: #cc0000;
-}
-
-.login-button {
-  background-color: #4CAF50;
-  color: white;
-}
-
-.login-button:hover {
-  background-color: #45a049;
-}
-
-.register-button {
-  background-color: #007bff;
-  color: white;
-}
-
-.register-button:hover {
-  background-color: #0056b3;
-}
-
-/* 🔹 Контейнер контента (чтобы контент не прятался под навигацией) */
-.main-container {
-  margin-top: 80px;
-}
-
-/* 🔹 Форма авторизации и регистрации */
-.auth-container {
-  max-width: 400px;
-  margin: 80px auto;
-  padding: 20px;
-  background-color: white;
-  border-radius: 10px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-  text-align: center;
-}
-
-.auth-form {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.auth-form input {
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-/* 🔹 Группировка кнопок в формах */
-.button-group {
-  display: flex;
-  justify-content: space-between;
-  gap: 10px;
-}
-
-/* 🔹 Карточки книг */
-.books-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 20px;
-  justify-content: center;
-  margin-top: 20px;
-}
-
-.book-card {
-  background: white;
-  padding: 15px;
-  border-radius: 8px;
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s;
-}
-
-.book-card:hover {
+.nav-item:hover {
+  background: rgba(255, 255, 255, 0.2);
   transform: scale(1.05);
 }
 
-/* 🔹 Кнопка "Назад" */
-.back-button {
-  margin-top: 10px;
-  padding: 10px;
-  background-color: #ff9800;
+.logout-btn {
+  background: #e74c3c;
   color: white;
   border: none;
+  padding: 8px 14px;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s ease-in-out;
+  transition: background 0.3s, transform 0.2s;
 }
 
-.back-button:hover {
-  background-color: #e68a00;
+.logout-btn:hover {
+  background: #c0392b;
+  transform: scale(1.05);
 }
 
-/* 🔹 Профиль */
-.profile-container {
-  max-width: 400px;
-  margin: 50px auto;
-  padding: 20px;
-  background-color: white;
-  border-radius: 10px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-  text-align: center;
-}
-
-.profile-form {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.profile-form input {
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-.profile-form button {
-  background-color: #007BFF;
-  color: white;
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease-in-out;
-}
-
-.profile-form button:hover {
-  background-color: #0056b3;
-}
-
-/* 🔹 Главная страница */
-.home-container {
-  text-align: center;
-  padding: 20px;
-  background-color: #f8f9fa;
-  min-height: 100vh;
-}
-
-.home-title {
-  font-size: 32px;
-  font-weight: bold;
-  color: #007bff;
-}
-
-.home-subtitle {
-  font-size: 18px;
-  color: #555;
-  margin-bottom: 20px;
-}
-/* 🔹 Универсальный стиль для кнопок */
-button {
-  font-size: 16px;
-  font-weight: bold;
-  padding: 10px 20px;  /* Нормальный отступ */
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease-in-out;
-  width: auto;  /* ❗ Ограничение ширины */
-  min-width: 100px;  /* Минимальная ширина */
-}
-
-/* 🔹 Кнопки в формах (чтобы они не были на всю ширину) */
-.auth-form button,
-.profile-form button,
-.book-form button {
-  width: auto;  /* ❗ Не занимать всю ширину */
-  min-width: 120px;
-}
-
-/* 🔹 Кнопка Logout */
-.logout-button {
-  background-color: #ff4b4b;
-  color: white;
-  padding: 10px 15px;
-  min-width: 120px; /* Фиксируем ширину */
-}
-
-.logout-button:hover {
-  background-color: #cc0000;
-}
-
-/* 🔹 Группировка кнопок */
-.button-group {
-  display: flex;
-  justify-content: center; /* Центрируем */
-  gap: 10px;
-}
-
-/* 🔹 Исправляем растягивание кнопок в навигации */
-nav button {
-  padding: 8px 12px;  /* Уменьшаем отступы */
-  min-width: auto;
-  width: auto;
-}
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f5f5f5;
-  margin: 0;
-  padding: 0;
-}
-
-.auth-container, .profile-container, .book-form {
-  max-width: 400px;
-  margin: 50px auto;
-  padding: 20px;
+/* 🔹 Контейнер форм */
+.auth-container, 
+.profile-container, 
+.book-form {
+  max-width: 450px;
+  margin: 80px auto;
+  padding: 25px;
   background: white;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
+  border-radius: 10px;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
 }
 
+/* 🔹 Инпуты */
 .auth-form input,
 .book-form input,
 .book-form select,
 .profile-container input {
   width: 100%;
   padding: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
   border: 1px solid #ddd;
   border-radius: 5px;
+  font-size: 14px;
 }
 
+/* 🔹 Кнопки */
 .button-group {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 10px;
 }
 
 button {
-  padding: 8px 16px;
+  padding: 10px 15px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  transition: background 0.3s;
+  font-size: 14px;
+  font-weight: bold;
+  transition: background 0.3s, transform 0.2s;
+}
+
+button:hover {
+  transform: scale(1.05);
 }
 
 .login-button {
@@ -315,6 +131,37 @@ button {
   background: #2980b9;
 }
 
+.back-button {
+  background: #f39c12;
+  color: white;
+}
+
+.back-button:hover {
+  background: #e67e22;
+}
+
+/* 🔹 Сетка книг */
+.books-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.book-card {
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.book-card:hover {
+  transform: scale(1.05);
+}
+
+/* 🔹 Профиль */
 .profile-container {
   display: flex;
   flex-direction: column;
