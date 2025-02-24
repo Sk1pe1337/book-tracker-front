@@ -21,7 +21,7 @@ body {
 /* 🔹 Навигация */
 nav {
   background-color: #2c3e50;
-  padding: 12px 20px;
+  padding: 10px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -34,15 +34,15 @@ nav {
 
 .nav-links {
   display: flex;
-  gap: 12px;
+  gap: 10px;
 }
 
 .nav-item {
   color: white;
   text-decoration: none;
   font-size: 14px;
-  padding: 8px 12px;
-  border-radius: 5px;
+  padding: 6px 10px;
+  border-radius: 4px;
   transition: background 0.3s, transform 0.2s;
 }
 
@@ -51,13 +51,16 @@ nav {
   transform: scale(1.05);
 }
 
+/* 🔹 Кнопка Logout (уменьшенная) */
 .logout-btn {
   background: #e74c3c;
   color: white;
   border: none;
-  padding: 8px 14px;
-  border-radius: 5px;
+  padding: 6px 10px;
+  border-radius: 4px;
   cursor: pointer;
+  font-size: 12px;
+  font-weight: bold;
   transition: background 0.3s, transform 0.2s;
 }
 
@@ -72,9 +75,9 @@ nav {
 .book-form {
   max-width: 450px;
   margin: 80px auto;
-  padding: 25px;
+  padding: 20px;
   background: white;
-  border-radius: 10px;
+  border-radius: 8px;
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
   text-align: center;
 }
@@ -85,26 +88,26 @@ nav {
 .book-form select,
 .profile-container input {
   width: 100%;
-  padding: 10px;
-  margin-bottom: 12px;
+  padding: 8px;
+  margin-bottom: 10px;
   border: 1px solid #ddd;
   border-radius: 5px;
   font-size: 14px;
 }
 
-/* 🔹 Кнопки */
+/* 🔹 Кнопки (уменьшенные) */
 .button-group {
   display: flex;
   justify-content: center;
-  gap: 10px;
+  gap: 8px;
 }
 
 button {
-  padding: 10px 15px;
+  padding: 8px 12px;
   border: none;
-  border-radius: 5px;
+  border-radius: 4px;
   cursor: pointer;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: bold;
   transition: background 0.3s, transform 0.2s;
 }
@@ -140,19 +143,32 @@ button:hover {
   background: #e67e22;
 }
 
+/* 🔹 Кнопка "Add Book" */
+.add-book-btn {
+  background: #2ecc71;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+.add-book-btn:hover {
+  background: #27ae60;
+}
+
 /* 🔹 Сетка книг */
 .books-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 20px;
+  gap: 15px;
   justify-content: center;
   margin-top: 20px;
 }
 
 .book-card {
   background: white;
-  padding: 15px;
-  border-radius: 8px;
+  padding: 12px;
+  border-radius: 6px;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s;
 }
@@ -174,6 +190,6 @@ button:hover {
 
 .profile-buttons {
   display: flex;
-  gap: 10px;
-  margin-top: 10px;
+  gap: 8px;
+  margin-top: 8px;
 }
