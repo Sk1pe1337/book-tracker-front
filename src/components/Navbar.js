@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./Navbar.css"; // Подключаем CSS
+import "./NavBar.css"; // Подключаем CSS
 
 function Navbar({ isAuthenticated, handleLogout }) {
   return (

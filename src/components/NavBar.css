@@ -1,63 +1,62 @@
 /* Общие стили навбара */
 .navbar {
-    background-color: #2c3e50; /* Темно-синий фон */
-    padding: 10px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Ссылки в навбаре */
-  .nav-links {
-    display: flex;
-    gap: 12px;
-  }
-  
-  .nav-item {
-    color: white;
-    text-decoration: none;
-    font-size: 14px;
-    padding: 6px 10px;
-    border-radius: 4px;
-    transition: background 0.3s, transform 0.2s;
-  }
-  
-  .nav-item:hover {
-    background: rgba(255, 255, 255, 0.2);
-    transform: scale(1.05);
-  }
-  
-  /* Кнопка Logout */
-  .logout-btn {
-    background: #e74c3c; /* Красный цвет */
-    color: white;
-    border: none;
-    padding: 6px 12px;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background 0.3s, transform 0.2s;
-  }
-  
-  .logout-btn:hover {
-    background: #c0392b;
-    transform: scale(1.05);
-  }
-  
-  /* Кнопки Login и Register */
-  .login-btn {
-    background: #34495e;
-  }
-  
-  .register-btn {
-    background: #27ae60;
-  }
-  
-  .login-btn:hover {
-    background: #2c3e50;
-  }
-  
-  .register-btn:hover {
-    background: #1e8449;
-  }
-  
+  background-color: #2c3e50; /* Темно-синий фон */
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Ссылки в навбаре */
+.nav-links {
+  display: flex;
+  gap: 12px;
+}
+
+.nav-item {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  padding: 6px 10px;
+  border-radius: 4px;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.nav-item:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
+}
+
+/* Кнопка Logout */
+.logout-btn {
+  background: #e74c3c; /* Красный цвет */
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.logout-btn:hover {
+  background: #c0392b;
+  transform: scale(1.05);
+}
+
+/* Кнопки Login и Register */
+.login-btn {
+  background: #34495e;
+}
+
+.register-btn {
+  background: #27ae60;
+}
+
+.login-btn:hover {
+  background: #2c3e50;
+}
+
+.register-btn:hover {
+  background: #1e8449;
+}
