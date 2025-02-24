@@ -41,7 +41,7 @@ function App() {
     };
 
     checkAuth();
-  }, []);
+  }, [isAuthenticated]); // 📌 Следим за изменением состояния
 
   // 📌 Функция выхода из аккаунта
   const handleLogout = async () => {
@@ -50,7 +50,7 @@ function App() {
       localStorage.removeItem("token");
       document.cookie = "jwt=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
       setIsAuthenticated(false);
-      window.location.href = "/";
+      window.location.href = "/login";
     } catch (error) {
       console.error("Logout failed:", error);
     }
@@ -62,19 +62,12 @@ function App() {
       
       <div className="main-container">
         <Routes>
-          {/* 📌 Главная страница - Library */}
-          <Route path="/" element={<Library />} /> 
-
-          {/* 📌 Перенаправление авторизованных пользователей на главную */}
+          <Route path="/" element={<Library />} />
           <Route path="/register" element={isAuthenticated ? <Navigate to="/" /> : <Register />} />
-          <Route path="/login" element={isAuthenticated ? <Navigate to="/" /> : <Login />} />
-
-          {/* 📌 Защищённые маршруты (только для авторизованных пользователей) */}
+          <Route path="/login" element={isAuthenticated ? <Navigate to="/" /> : <Login setIsAuthenticated={setIsAuthenticated} />} />
           <Route path="/my-books" element={isAuthenticated ? <MyBooks /> : <Navigate to="/login" />} />
           <Route path="/add-book" element={isAuthenticated ? <AddBook /> : <Navigate to="/login" />} />
           <Route path="/profile" element={isAuthenticated ? <Profile /> : <Navigate to="/login" />} />
-
-          {/* 📌 Перенаправление на главную, если путь не найден */}
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </div>

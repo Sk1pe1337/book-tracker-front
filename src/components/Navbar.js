@@ -15,7 +15,7 @@ function Navbar({ isAuthenticated, handleLogout }) {
         <button 
           onClick={handleLogout} 
           className="bg-red-500 px-4 py-2 text-white rounded hover:bg-red-600"
-          style={{ minWidth: "120px" }} // ✅ Фикс ширины кнопки Logout
+          style={{ minWidth: "120px" }}
         >
           Logout
         </button>
