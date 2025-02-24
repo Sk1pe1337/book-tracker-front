@@ -257,3 +257,76 @@ nav button {
   min-width: auto;
   width: auto;
 }
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  margin: 0;
+  padding: 0;
+}
+
+.auth-container, .profile-container, .book-form {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  background: white;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.auth-form input,
+.book-form input,
+.book-form select,
+.profile-container input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.button-group {
+  display: flex;
+  justify-content: space-between;
+}
+
+button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.login-button {
+  background: #27ae60;
+  color: white;
+}
+
+.register-button {
+  background: #3498db;
+  color: white;
+}
+
+.login-button:hover {
+  background: #219150;
+}
+
+.register-button:hover {
+  background: #2980b9;
+}
+
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile-container input {
+  max-width: 300px;
+}
+
+.profile-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
