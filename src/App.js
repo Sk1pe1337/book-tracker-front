@@ -9,25 +9,13 @@ import Profile from "./pages/Profile";
 import Navbar from "./components/Navbar";
 import API from "./api/api";
 
-import "./App.css";
-
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
-  // 📌 Проверяем авторизацию пользователя
   useEffect(() => {
     const checkAuth = async () => {
       try {
-        const token = localStorage.getItem("token");
-        if (!token) {
-          setIsAuthenticated(false);
-          return;
-        }
-        
-        const res = await API.get("/auth/me", {
-          headers: { Authorization: `Bearer ${token}` }
-        });
-
+        const res = await API.get("/auth/me"); // ✅ Проверяем токен
         if (res.data) {
           setIsAuthenticated(true);
         } else {
@@ -41,14 +29,12 @@ function App() {
     };
 
     checkAuth();
-  }, [isAuthenticated]); // 📌 Следим за изменением состояния
+  }, [isAuthenticated]);
 
-  // 📌 Функция выхода из аккаунта
   const handleLogout = async () => {
     try {
       await API.post("/auth/logout");
       localStorage.removeItem("token");
-      document.cookie = "jwt=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
       setIsAuthenticated(false);
       window.location.href = "/login";
     } catch (error) {
@@ -59,7 +45,6 @@ function App() {
   return (
     <Router>
       <Navbar isAuthenticated={isAuthenticated} handleLogout={handleLogout} />
-      
       <div className="main-container">
         <Routes>
           <Route path="/" element={<Library />} />
